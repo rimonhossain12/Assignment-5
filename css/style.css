@@ -1,0 +1,23 @@
+img {
+    width: 85%;
+}
+
+.form-control:hover {
+    background-color: lightgray;
+    color: white;
+}
+
+#first-storage {
+    width: 40%;
+    display: inline;
+}
+
+#second-storage {
+    width: 40%;
+    display: inline;
+}
+
+.common-hr {
+    width: 35%;
+    font-weight: bold;
+}
