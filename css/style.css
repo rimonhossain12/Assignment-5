@@ -18,6 +18,14 @@ img {
 }
 
 .common-hr {
-    width: 35%;
+    width: 45%;
     font-weight: bold;
+}
+#one-hr {
+    width: 50%;
+    border-bottom: 3px solid black;
+}
+
+#last-hr {
+    border: 1px solid gray;
 }
