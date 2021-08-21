@@ -12,9 +12,11 @@ function getPriceProuduct(element, number, price) {
     if (number == 1) {
         proudctName.innerText = price;
         getTotalMoney();
+        lastFinalMoney();
     } else if (number == 2) {
         proudctName.innerText = price;
         getTotalMoney();
+        lastFinalMoney();
     }
 }
 // select memory elemetn
@@ -40,12 +42,15 @@ function getStoragePrice(element, number, price) {
     if (number == 1) {
         storageInput.innerText = price;
         getTotalMoney();
+        lastFinalMoney();
     } else if (number == 2) {
         storageInput.innerText = price;
         getTotalMoney();
+        lastFinalMoney();
     } else if (number == 3) {
         storageInput.innerText = price;
         getTotalMoney();
+        lastFinalMoney();
     }
 }
 // selected storage size
@@ -72,9 +77,11 @@ function delivaryCalculated(element, number, price) {
     if (number == 1) {
         delivaryInput.innerText = price;
         getTotalMoney();
+        lastFinalMoney();
     } else if (number == 2) {
         delivaryInput.innerText = price;
         getTotalMoney();
+        lastFinalMoney();
     }
 }
 
@@ -109,7 +116,13 @@ function getTotalMoney() {
     const mainInput = document.getElementById('total-price');
     const mainTotal = parseInt(mainInput.innerText);
     mainInput.innerText = finalMoney;
-
     return finalMoney;
 
+}
+
+// after buy all the product price calculated
+
+function lastFinalMoney() {
+    const lastMain = document.getElementById('totalMain-price');
+    lastMain.innerText = getTotalMoney();
 }
