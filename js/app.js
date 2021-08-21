@@ -1,116 +1,61 @@
-/* js implementation start */
+/* In the name of Allah*/
 // price countter for memory
-function getPriceProuduct(element, number, price) {
+function getPriceProuduct(element, number, price, proudctTotal) {
     const inputElement = document.getElementById(element);
     const elementText = inputElement.value;
-    const proudctName = document.getElementById('memory-price');
+    const proudctName = document.getElementById(proudctTotal);
     const productText = proudctName.innerText;
     const productPrice = parseInt(productText);
-
     console.log(proudctName.innerText);
-
     if (number == 1) {
         proudctName.innerText = price;
         getTotalMoney();
         lastFinalMoney();
     } else if (number == 2) {
         proudctName.innerText = price;
-        getTotalMoney();
-        lastFinalMoney();
-    }
-}
-// select memory elemetn
-document.getElementById('first-memory').addEventListener('click', function () {
-    getPriceProuduct('first-memory', 1, 0);
-});
-
-// select extra memory
-document.getElementById('second-memory').addEventListener('click', function () {
-    getPriceProuduct('second-memory', 2, 180);
-});
-
-// storage counter start from here
-function getStoragePrice(element, number, price) {
-    // where assign the main value
-    const storageInput = document.getElementById('storage-price');
-    const storageTotal = storageInput.innerText;
-
-    // indentify what things user passing function
-    const elementInput = document.getElementById(element);
-    const elementText = elementInput.value;
-
-    if (number == 1) {
-        storageInput.innerText = price;
-        getTotalMoney();
-        lastFinalMoney();
-    } else if (number == 2) {
-        storageInput.innerText = price;
         getTotalMoney();
         lastFinalMoney();
     } else if (number == 3) {
-        storageInput.innerText = price;
+        proudctName.innerText = price;
         getTotalMoney();
         lastFinalMoney();
     }
 }
-// selected storage size
+// select memory element
+document.getElementById('first-memory').addEventListener('click', function () {
+    getPriceProuduct('first-memory', 1, 0, 'memory-price');
+});
+document.getElementById('second-memory').addEventListener('click', function () {
+    getPriceProuduct('second-memory', 2, 180, 'memory-price');
+});
+// storage select
 document.getElementById('first-storage').addEventListener('click', function () {
-    getStoragePrice('first-storage', 1, 0);
+    getPriceProuduct('first-storage', 1, 0, 'storage-price');
 });
-
 document.getElementById('second-storage').addEventListener('click', function () {
-    getStoragePrice('second-storage', 2, 100);
+    getPriceProuduct('second-storage', 2, 100, 'storage-price');
 });
-
 document.getElementById('third-storage').addEventListener('click', function () {
-    getStoragePrice('third-storage', 3, 180);
+    getPriceProuduct('third-storage', 3, 180, 'storage-price');
 });
-
-// delivary cost start from here
-
-//extra charge calculted for delivary
-function delivaryCalculated(element, number, price) {
-
-    const delivaryInput = document.getElementById('delivery-price');
-    const delivarTotal = delivaryInput.innerText;
-
-    if (number == 1) {
-        delivaryInput.innerText = price;
-        getTotalMoney();
-        lastFinalMoney();
-    } else if (number == 2) {
-        delivaryInput.innerText = price;
-        getTotalMoney();
-        lastFinalMoney();
-    }
-}
-
-// select the element
+// select the delivary
 document.getElementById('first-delivary').addEventListener('click', function () {
-    delivaryCalculated('first-delivary', 1, 0);
+    getPriceProuduct('first-delivary', 1, 0, 'delivery-price');
 });
-
 document.getElementById('second-delivary').addEventListener('click', function () {
-    delivaryCalculated('second-delivary', 1, 20);
+    getPriceProuduct('second-delivary', 2, 20, 'delivery-price');
 });
-
 // total price update counter 
 function getTotalMoney() {
-
     const bestPriceInput = document.getElementById('best-price');
     const bestPriceTotal = parseInt(bestPriceInput.innerText);
-
     const memoryInput = document.getElementById('memory-price');
     const memoryTotal = parseInt(memoryInput.innerText);
-
     const storage = document.getElementById('storage-price');
     const storageTotal = parseInt(storage.innerText);
-
     const delivary = document.getElementById('delivery-price');
     const delivaryTotal = parseInt(delivary.innerText);
-
     let finalMoney = bestPriceTotal + memoryTotal + storageTotal + delivaryTotal;
-
     // final total price
     const mainInput = document.getElementById('total-price');
     const mainTotal = parseInt(mainInput.innerText);
@@ -118,13 +63,11 @@ function getTotalMoney() {
     return finalMoney;
 }
 // after buy all the product price calculated
-
 function lastFinalMoney() {
     const lastMain = document.getElementById('totalMain-price');
     lastMain.innerText = getTotalMoney();
 }
 // discount center
-
 function applyBtn() {
     const totalPriceInput = document.getElementById('total-price');
     const totalPrice = parseInt(totalPriceInput.innerText);
@@ -138,5 +81,4 @@ function applyBtn() {
         totalMian.innerText = totalPrice - discount;
         coponText.value = '';
     }
-
 }
