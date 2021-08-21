@@ -1,12 +1,15 @@
+/* style for images width */
 img {
     width: 85%;
 }
 
+/* form hover effect */
 .form-control:hover {
     background-color: lightgray;
     color: white;
 }
 
+/* memory input design */
 #first-storage {
     width: 40%;
     display: inline;
@@ -17,15 +20,18 @@ img {
     display: inline;
 }
 
+/* common horizontal control */
 .common-hr {
     width: 45%;
     font-weight: bold;
 }
+/* special horizonal control */
 #one-hr {
     width: 50%;
     border-bottom: 3px solid black;
 }
 
+/* total horizontal control */
 #last-hr {
     border: 1px solid gray;
 }
