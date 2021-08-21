@@ -1,5 +1,5 @@
 /* In the name of Allah*/
-// price countter for memory
+// price countter for all products
 function getPriceProuduct(element, number, price, proudctTotal) {
     const inputElement = document.getElementById(element);
     const elementText = inputElement.value;
