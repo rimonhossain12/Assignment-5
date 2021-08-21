@@ -61,4 +61,29 @@ document.getElementById('third-storage').addEventListener('click', function () {
 
 //extra charge calculted for delivary
 
+function delivaryCalculated(element, number, price) {
+
+    // price identify
+    const priceInput = document.getElementById('delivery-price');
+    const priceTotal = priceInput.innerText;
+
+    // identify delivary number
+
+    const delivary = document.querySelector('#' + element);
+    if (number == 1) {
+        priceInput.innerText = price;
+    } else if (n == 2) {
+        priceInput.innerText = price;
+    }
+}
+
+// select the element
+document.getElementById('first-delivary').addEventListener('click', function () {
+    delivaryCalculated('first-storage', 1, 0);
+});
+
+document.getElementById('second-delivary').addEventListener('click', function () {
+    delivaryCalculated('first-storage', 1, 20);
+});
+
 
