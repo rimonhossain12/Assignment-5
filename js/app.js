@@ -126,3 +126,23 @@ function lastFinalMoney() {
     const lastMain = document.getElementById('totalMain-price');
     lastMain.innerText = getTotalMoney();
 }
+
+// discount center
+
+
+document.getElementById('apply-copon').addEventListener('click', function () {
+    let check = 1;
+    if (check == 1) {
+        const codeInput = document.getElementById('cupon-cod');
+        const codeText = codeInput.value;
+        if (codeText == 'stevekaku') {
+            const lastMain = document.getElementById('totalMain-price');
+            const lastMainTotal = parseInt(lastMain.innerText);
+            let discount = (lastMainTotal / 100) * 20;
+            let discountMoney = lastMainTotal - discount;
+            lastMain.innerText = discountMoney;
+            codeInput.value = '';
+        }
+        return;
+    }
+});
